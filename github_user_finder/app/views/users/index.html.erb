@@ -1,0 +1,29 @@
+<h1>Github Users</h1>
+<%= form_tag("/users", :method => "get", :class => 'form-inline' ) do %>
+   <div class="form-group">
+      <%= text_field_tag(:q, nil, :placeholder =>'Enter the github nickname', :class => "search-query form-control") %>
+    </div>
+    <%= button_tag(raw('<span class="glyphicon glyphicon-search"></span> Search'), :class => 'btn btn-primary') %>
+<% end %>
+
+<% if @users && @users.size > 0 %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user %></td>
+          <td><%= link_to 'View', root_path %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <h2>No users to show!</h2>
+<% end %>

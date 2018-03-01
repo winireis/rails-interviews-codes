@@ -1,0 +1,10 @@
+<% if @start_date.present? && @end_date.present? %>
+  <p>
+    <strong>Current filter:</strong><br>
+    <%= "#{@start_date.strftime("%Y-%m-%d")} - #{@end_date.strftime("%Y-%m-%d")}" %>
+  </p>
+<% else %>
+  <p>
+    <strong>No filter selected!</strong>
+  </p>
+<% end %>

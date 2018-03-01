@@ -1,0 +1,9 @@
+<h1>New load</h1>
+<p>Enter latitude and longitude to load the last 7 days tweets around an area of 1 kilometer.</p>
+<%= form_tag("/load/create", :method => "put", :class => 'form-inline' ) do %>
+  <div class="form-group">
+     <%= text_field_tag(:latitude, nil, :placeholder =>'Enter latitude') %>
+     <%= text_field_tag(:longitude, nil, :placeholder =>'Enter longitude') %>
+   </div>
+   <%= button_tag(raw('<span class="glyphicon glyphicon-save"></span> Load'), :class => 'btn btn-success') %>
+<% end %>

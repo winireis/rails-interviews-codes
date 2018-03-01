@@ -1,0 +1,23 @@
+<table class="table table-striped">
+  <thead>
+        <tr>
+          <th class="text-center">User</th>
+          <th class="text-center">Total Tweets</th>
+          <th class="text-center">Total Chars</th>
+          <th class="text-center">Total Words</th>
+          <th class="text-center">Top 3 Words</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @by_user.each do |tweet| %>
+          <tr>
+            <td class="text-center"><%= tweet.nickname %></td>
+            <td class="text-center"><%= tweet.tweet_id %></td>
+            <td class="text-center"><%= tweet.char_length%></td>
+            <td class="text-center"><%= tweet.word_length %></td>
+            <td class="text-center"><%= tweet.top3 %></td>
+          </tr>
+        <% end %>
+      </tbody>
+</table>

@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: development
+  password: development
+  pool: 5
+
+development:
+  <<: *default
+  database: twitter-geo_development
+
+test:
+  <<: *default
+  database: twitter-geo_test
+
+production:
+  <<: *default
+  database: twitter-geo_production
+  username: twitter-geo
+  password: <%= ENV['TWITTER-GEO_DATABASE_PASSWORD'] %>
